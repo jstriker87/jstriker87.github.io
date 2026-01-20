@@ -80,7 +80,7 @@ Features:
 
 ### 📂 File-Processing-Pipeline – A file processing backend written in Go (WIP)
 **Go,Data Management, Productivity**  
-[https://github.com/jstriker87/mpv-progress-sync-cross-platform ](https://github.com/jstriker87/File-Processing-Pipeline) 
+[https://github.com/jstriker87/File-Processing-Pipeline](https://github.com/jstriker87/File-Processing-Pipeline)
 
 A backeend designed for storing files along with descriptions, which can be used .
 
