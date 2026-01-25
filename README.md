@@ -88,19 +88,30 @@ A backend designed for storing files along with descriptions, which can be used 
 Sometimes when you have an important file, it takes time to search for it in the future
 - There is no additional metadata to search for a document, other than knowiong certain keywords in the file
 
-**Solution:**
-- The backend system exposes two endpoints currently (although this will increase in the future)
-  - /status - This shows a basic list of the files in the 'uploads' folder within the backend (you can also change the folder location)
-  - /upload - This allows you to upload a file of up to a certain size (users can set the maximum file size).
-      - Currently this is a work in progress, so you can only upload files.
-        - The second stage (in progress) involves implementing a process that will allow the user include a description with the file. This will be stored as a hidden json file along with the file in its own sub-folder in the main 'uploads' folder.
-        - The third stage will be to provide a search endpoint to allow you to search the file description, as well as the file contents (dependent n the file type)
 
+**Solution:**
+ - The File-Processing-Ppipeline solvess this problem by allowing users to upload filees to their chosen location along with a description. This description can then be searched to allow eeasier location of files
+ - The backend system exposes four endpoints
+    /status - (GET) - Shows the current storage usage of your ‘uploads’ folder
+
+    /upload - (POST) Allows users to upload a file of up to a certain size (The maximum filesize of files can be set in the configuration (see Configuration section)
+        Alongside the file you can provide a description as a json with the key of 'description'. Foe example {"description": "My current CV 2026"}
+
+    /search - (GET) - Allows users to search for words in the description provided with the file. You can also search inside the files themselves if they are encoded using UTF-8
+        An example search of 'Apples' is http://localhost:8080/search?sq=Apples
+        Example files that use UTF-8 encoding and therefore its file contents can also be searched) are:
+            Web Files: .html, .css, .js, .xml
+            Text & Data Files: .txt, .csv, .json, .md (Markdown)
+            Configuration & Scripts: .py (Python), .ini, .yaml
+        The search results provided will provide you with a direct link from the /download endpoint to download the files in the search results
+
+    /download - (GET) - Allows users to download a file. The endpoint uses the name of the folder where your file is located
+-
 **Highlights:**
 - Solves a context and understanding problem
 - Allows you to search and find files using your own reference information / metadata
 - Designed to be self hosted.
-- Can be implemented to any program, page or script that can send POST / GET requests
+- Can be implemented to any program, page or script that can send POST / GET requests, and unmarshall json data
 
 ---
 
