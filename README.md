@@ -1,5 +1,3 @@
-# jstriker87.github.io
-
 # James Cumming-Bart –  Portfolio
 
 I am a Junior Backend Engineer with a Computer Science BSc (2:1) and I have strong interest in making well-structured systems.  
@@ -106,7 +104,7 @@ Sometimes when you have an important file, it takes time to search for it in the
         The search results provided will provide you with a direct link from the /download endpoint to download the files in the search results
 
     /download - (GET) - Allows users to download a file. The endpoint uses the name of the folder where your file is located
--
+
 **Highlights:**
 - Solves a context and understanding problem
 - Allows you to search and find files using your own reference information / metadata
