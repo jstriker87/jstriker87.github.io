@@ -89,7 +89,7 @@ Finding files by their name and sometimes contents can lead to disappointment. B
 
 Solution:
 
-- The File-Processing-Ppipeline solvess this problem by allowing users to upload filees to their chosen location along with a description. This description can then be searched to allow eeasier location of files
+- The File-Processing-Ppipeline solves this problem by allowing users to upload files to their chosen location along with a description. This description can then be searched to allow eeasier location of files
 - The backend system exposes four endpoints:
   - GET /status \
     - Shows the current storage usage stats of the upload directory.
